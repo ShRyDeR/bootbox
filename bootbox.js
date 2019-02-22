@@ -400,9 +400,13 @@
     // it, but we need to make sure we respect a preference not to show it
     shouldShow = (options.show === undefined) ? true : options.show;
 
+	// Prepend original message before.
+	form.prepend(options.message);
+
     /**
-     * overrides; undo anything the user tried to set they shouldn't have
+     * overrides; undo anything the user tried to set they shouldn't have (WHY ARE YOU OVERWRITTING FREAKING OPTIONS.MESSAGE)
      */
+	
     options.message = form;
 
     options.buttons.cancel.callback = options.onEscape = function() {
